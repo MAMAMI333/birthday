@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.env/
+venv/
+.venv/
+
+# VS Code editor files
+.vscode/
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# Test / coverage files
+coverage/
+*.cover
+*.pytest_cache/
+htmlcov/
+
+# Node/Web-related (if you have web assets)
+node_modules/
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
