@@ -1,3 +1,4 @@
+import utils
 from flask import Flask, request, render_template, redirect
 import json
 
@@ -13,5 +14,6 @@ def index():
     if request.method == "GET":
         return render_template("index.html", dates=dates)
     else:
+        utils.add(request.form.get("name"), request.form.get("date"))
         return redirect("/")
     
