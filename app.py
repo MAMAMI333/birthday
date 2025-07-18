@@ -1,19 +1,17 @@
-import utils
+import contact_data_base as db
 from flask import Flask, request, render_template, redirect
-import json
 
 app = Flask(__name__)
 
 
-with open("dates.json", "r") as file:
-    dates = json.load(file)
-
-
-@app.route("/", methods=["GET","POST"])
+@app.route("/", methods=["GET", "POST"])
 def index():
-    if request.method == "GET":
-        return render_template("index.html", dates=dates)
-    else:
-        utils.add(request.form.get("name"), request.form.get("date"))
+    if request.method == "POST":
+        name = request.form.get("name")
+        date = request.form.get("date")
+        db.add(name, date)
         return redirect("/")
+    
+    dates = db.read()
+    return render_template("index.html", dates=dates)
     
