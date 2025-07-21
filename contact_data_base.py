@@ -10,8 +10,9 @@ def add(name, date):
 def read():
     with sqlite3.connect("database.db") as con:
         cur = con.cursor()
-        rows = cur.execute("SELECT name, date FROM birthdays").fetchall()
+        rows = cur.execute("SELECT id, name, date FROM birthdays").fetchall()
         return rows
+    
     
 def remove(name):
     with sqlite3.connect("database.db") as con:
