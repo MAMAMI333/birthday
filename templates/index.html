@@ -34,8 +34,9 @@
         <table class="table table-bordered table-primary">
             <thead>
                 <tr>
-                    <th style="width: 50%; text-align: center;">Name</th>
-                    <th style="width: 50%; text-align: center;">Birthday</th>
+                    <th style="width: 30%; text-align: center;">Name</th>
+                    <th style="width: 30%; text-align: center;">Birthday</th>
+                    <th style="width: 30%; text-align: center;">Days until birthday</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,6 +44,13 @@
                     <tr>
                         <td style="text-align: center;">{{ person.1 }}</td>
                         <td style="text-align: center;">{{ person.2 }}</td>   
+                        <td style="text-align: center;">
+                            {% for days in days_left %}
+                                {% if days[0] == person[0] %}
+                                    {{ days[1] }}
+                                {% endif %}
+                            {% endfor %}
+                        </td>
                     </tr>
                  {% endfor %}
             </tbody>

@@ -4,9 +4,8 @@ import contact_data_base as db
 
 def days_until_birthday():
     """Calculate the number of days until the next birthday."""
-    days_left_dict = {}
     today = datetime.date.today()
-    for person in db.read():
+    for person in db.read("birthdays"):
         id = person[0]
         birthday = person[2]
 
@@ -16,8 +15,6 @@ def days_until_birthday():
 
         if this_year_birthday < today:
             this_year_birthday = datetime.date(today.year + 1, birthday.month, birthday.day)
-            days_left_dict[id] = (this_year_birthday - today).days
+            db.add_to_days_left(id, (this_year_birthday - today).days)
         else:
-            days_left_dict[id] = (this_year_birthday - today).days
-    
-    return days_left_dict
+            db.add_to_days_left(id, (this_year_birthday - today).days)
