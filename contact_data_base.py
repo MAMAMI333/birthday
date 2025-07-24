@@ -16,6 +16,7 @@ def add_to_days_left(id, days_left):
 
 
 def read(table_name):
+    """Read data from the specified table."""
     if table_name in ("birthdays", "days_left"):
         with sqlite3.connect("database.db") as con:
             cur = con.cursor()
@@ -27,6 +28,7 @@ def read(table_name):
         
     
 def remove(name):
+    """Remove a birthday entry by name."""
     with sqlite3.connect("database.db") as con:
         cur = con.cursor()
         cur.execute("DELETE FROM birthdays WHERE name = ?", (name,))

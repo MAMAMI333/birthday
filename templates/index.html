@@ -23,8 +23,8 @@
                 <div class="col-md-3 col-6">
                     <input name="date" type="date" class="form-control" required style="text-align: center;">
                 </div>
-                <div class="col-md-3 gy-2 gy-md-0">
-                    <button type="submit" class="btn btn-primary">Add birthday</button>
+                <div class="col-md-2 gy-2 gy-md-0 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary w-100">Add birthday</button>
                 </div>
             </div>
         </form>  
@@ -34,9 +34,10 @@
         <table class="table table-bordered table-primary">
             <thead>
                 <tr>
-                    <th style="width: 30%; text-align: center;">Name</th>
-                    <th style="width: 30%; text-align: center;">Birthday</th>
-                    <th style="width: 30%; text-align: center;">Days until birthday</th>
+                    <th style="width: 20%; text-align: center;">Name</th>
+                    <th style="width: 20%; text-align: center;">Birthday</th>
+                    <th style="width: 20%; text-align: center;">Days until birthday</th>
+                    <th style="width: 20%; text-align: center;"></th>
                 </tr>
             </thead>
             <tbody>
@@ -51,6 +52,7 @@
                                 {% endif %}
                             {% endfor %}
                         </td>
+                        <td><button class="btn btn-primary w-100">Remove</button></td>
                     </tr>
                  {% endfor %}
             </tbody>

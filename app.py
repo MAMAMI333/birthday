@@ -19,4 +19,8 @@ def index():
     days_left = db.read("days_left")
     calc.days_until_birthday()  # Update days left before the next birthday
     return render_template("index.html", dates=dates, days_left=days_left)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
     
