@@ -30,6 +30,17 @@ def remove():
     print(f"Removed birthday with ID: {id}")
     return redirect("/")
 
+
+@app.route("/register", methods=["GET","POST"])
+def register():
+    return render_template("register.html")
+
+
+@app.route("/log_in", methods=["GET","POST"])
+def log_in():
+    return render_template("log_in.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
     
